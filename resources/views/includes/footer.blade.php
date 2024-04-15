@@ -2,7 +2,7 @@
     <div class="container py-5">
         <div class="row footer-wrapper justify-content-between">
             <div class="col-2">
-                <img class="logo-footer" src="img/logo_big%201.png" alt="logo">
+                <img class="logo-footer" src="img/logo_big.png" alt="logo">
                 <div class="fs-6 mt-3">BusWorld это профессиональные перевозки пассажиров по всему миру. Возим людей по
                     всей России
                 </div>
