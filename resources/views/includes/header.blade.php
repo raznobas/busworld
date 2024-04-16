@@ -5,9 +5,6 @@
         <div class="col-2 menu-item w-auto">
             <a href="{{ route('search') }}">Поиск рейса</a>
         </div>
-        <div class="col-2 menu-item w-auto">
-            <a href="">Акции</a>
-        </div>
         <div class="col-2 menu-item me-0 w-auto">
             <a href="{{ route('profile') }}">Личный кабинет</a>
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title')Регистрация@endsection
 @section('content')
-    <div class="container mt-5">
+<div class="container mt-5">
         <div class="d-inline-block">
             <h2 class="text-start border-b-blue">Регистрация</h2>
         </div>

@@ -36,7 +36,7 @@
                         <input type="date" id="rev">
                     </div>
                     <div class="col-3">
-                        <a href="pages/search.html">
+                        <a href="{{ route('search') }}">
                             <button class="btn w-100 bg-blue btn-search text-white">Искать</button>
                         </a>
                     </div>
@@ -91,7 +91,7 @@
             <div class="col-5 py-5 ">
                 <h2 class="text-start">Хочешь путешествовать?</h2>
                 <div class="my-3">Путешествуй!</div>
-                <a href="pages/search.html">
+                <a href="{{ route('search') }}">
                     <button class="btn w-100 bg-blue btn-search text-white">Путешествовать</button>
                 </a>
             </div>

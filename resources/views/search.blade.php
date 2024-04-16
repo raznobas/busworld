@@ -18,7 +18,6 @@
             <div class="col-9 px-4">
                 <div class="row pb-3 align-items-center">
                     <div class="col-1 w-auto fs-4 text-gray">#GG832R6</div>
-                    <div class="col-1"><img src="../img/Japan.png" alt=""></div>
                 </div>
                 <div class="fs-5 fw-bold">Туда: Москва — Ростов-на-Дону</div>
                 <div class="row">
@@ -35,14 +34,12 @@
                         <div class="row justify-content-between">
                             <div class="col-3 text-gray w-auto">
                                 <div class="fs-6">Автовокзал Котельники</div>
-                                <div class="fs-6">01 ноября 2022, вт</div>
                             </div>
                             <div class="col-3 text-gray text-center">
                                 <div class="fs-6">В пути: 4 ч 15 мин</div>
                             </div>
                             <div class="col-3 text-gray w-auto text-end">
                                 <div class="fs-6">Автовокзал Пригородный</div>
-                                <div class="fs-6">02 ноября 2022, вт</div>
                             </div>
                         </div>
                     </div>
@@ -62,14 +59,12 @@
                         <div class="row justify-content-between">
                             <div class="col-3 text-gray w-auto">
                                 <div class="fs-6">Автовокзал Котельники</div>
-                                <div class="fs-6">01 ноября 2022, вт</div>
                             </div>
                             <div class="col-3 text-gray text-center">
                                 <div class="fs-6">В пути: 4 ч 15 мин</div>
                             </div>
                             <div class="col-3 text-gray w-auto text-end">
                                 <div class="fs-6">Автовокзал Пригородный</div>
-                                <div class="fs-6">02 ноября 2022, вт</div>
                             </div>
                         </div>
                     </div>
