@@ -12,6 +12,7 @@
 <div id="app">
     @include('includes.header')
     <div>
+        @include('includes.messages')
         @yield('content')
     </div>
     @include('includes.footer')

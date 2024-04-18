@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test-database', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'Database connection is working.';
+    } catch (\Exception $e) {
+        return 'Could not connect to the database. Error: ' . $e->getMessage();
+    }
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,12 +27,16 @@ Route::get('/', function () {
 Route::get('/search', function () {
     return view('search');
 })->name('search');
-Route::get('/booking', function () {
-    return view('booking');
-})->name('booking');
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/booking', function () {
+        return view('booking');
+    })->name('booking');
+    Route::get('/profile', function () {
+        return view('profile');
+    })->name('profile');
+});
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -38,6 +50,15 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::post(
+    '/register',
+    [\App\Http\Controllers\UsersController::class, 'register']
+)->name('register');
+
+Route::post('/login',
+    [\App\Http\Controllers\UsersController::class, 'login']
+)->name('login');
 
 Route::post(
     '/contact/submit',
