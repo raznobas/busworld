@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-12 py-2">
                     <label for="pass">Пароль</label>
-                    <input type="password" name="pass">
+                    <input type="password" name="password">
                 </div>
                 <div class="col-12">
                     <button type="submit" class="action-btn-look fw-500 btn-booked-buy mt-4 text-white w-100 btn">Войти</button>

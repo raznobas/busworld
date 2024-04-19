@@ -12,29 +12,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/test-database', function () {
-    try {
-        DB::connection()->getPdo();
-        return 'Database connection is working.';
-    } catch (\Exception $e) {
-        return 'Could not connect to the database. Error: ' . $e->getMessage();
-    }
-});
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-Route::get('/search', function () {
-    return view('search');
-})->name('search');
+
+Route::get('/search',
+    [\App\Http\Controllers\RouteController::class, 'index']
+)->name('search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/booking', function () {
         return view('booking');
     })->name('booking');
-    Route::get('/profile', function () {
-        return view('profile');
-    })->name('profile');
+    Route::get('/profile',
+        [\App\Http\Controllers\UserController::class, 'showProfile']
+    )->name('profile');
 });
 
 Route::get('/login', function () {
@@ -53,12 +46,16 @@ Route::get('/contact', function () {
 
 Route::post(
     '/register',
-    [\App\Http\Controllers\UsersController::class, 'register']
+    [\App\Http\Controllers\UserController::class, 'register']
 )->name('register');
 
 Route::post('/login',
-    [\App\Http\Controllers\UsersController::class, 'login']
+    [\App\Http\Controllers\UserController::class, 'login']
 )->name('login');
+
+Route::post('/logout',
+    [\App\Http\Controllers\UserController::class, 'logout']
+)->name('logout');
 
 Route::post(
     '/contact/submit',

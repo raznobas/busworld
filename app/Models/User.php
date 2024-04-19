@@ -22,7 +22,7 @@ class User extends Authenticatable
         'name',
         'surname',
         'login',
-        'pass',
+        'password',
         'passport',
         'route_id',
     ];

@@ -9,22 +9,23 @@
         <div class="bg-block mt-5 p-5">
             <div class="row justify-content-between">
                 <div class="col-12 mb-3 fw-500 fs-4">Персональные данные</div>
-                <div class="col-4">
-                    <label for="surname">Фамилия</label>
-                    <input placeholder="Иванов" id="surname">
+                <div class="col-12">
+                    <div class="fs-4 d-inline">Фамилия:</div>
+                    <div class="fs-2 d-inline ms-3">{{ $user -> surname }}</div>
                 </div>
-                <div class="col-4">
-                    <label for="name">Имя</label>
-                    <input placeholder="Иван" id="name">
+                <div class="col-12">
+                    <div class="fs-4 d-inline">Имя:</div>
+                    <div class="fs-2 d-inline ms-3">{{ $user -> name }}</div>
                 </div>
-                <div class="col-4">
-                    <label for="thirdName">Отчество</label>
-                    <input placeholder="Иванович" id="thirdName">
+                <div class="col-12">
+                    <div class="fs-4 d-inline">Паспорт:</div>
+                    <div class="fs-2 d-inline ms-3">{{ $user -> passport }}</div>
                 </div>
             </div>
-            <div class="row mt-5 fw-500 fs-4 align-items-center">
+            <div class="row fw-500 fs-4 align-items-center">
                 <div class="col-3 ms-auto">
-                    <form action="login.html">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
                         <button class="profile-exit-btn fw-500 btn-booked-buy text-white btn w-100">
                             Выйти из учетной записи
                         </button>

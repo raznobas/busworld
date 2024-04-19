@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('routes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('login');
-            $table->string('password');
-            $table->integer('passport')->nullable();
-            $table->integer('route_id')->nullable();
+            $table->string('start_city');
+            $table->string('start_place');
+            $table->string('start_time');
+            $table->string('end_city');
+            $table->string('end_place');
+            $table->string('end_time');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('routes');
     }
 };

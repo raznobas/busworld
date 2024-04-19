@@ -6,19 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class UsersController extends Controller {
+class UserController extends Controller {
+    public function showProfile(Request $request)
+    {
+        $user = Auth::user();
+        return view('profile', ['user' => $user]);
+    }
     public function login(Request $request)
     {
-        $credentials = $request->only('login', 'pass');
-
-        $credentials['password'] = $credentials['pass'];
-        unset($credentials['pass']);
+        $credentials = $request->only('login', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->route('profile')->with('success', 'Успешно');
+        } else {
+            dd(Auth::attempt($credentials)); // Выведет результат попытки авторизации
         }
-
-        return redirect()->route('login')->with('error', 'Ошибка');
+//
+//        return redirect()->route('login')->with('error', 'Ошибка');
     }
     public function register(Request $req)
     {
@@ -26,10 +30,15 @@ class UsersController extends Controller {
         $user->name = $req->input('name');
         $user->surname = $req->input('surname');
         $user->login = $req->input('login');
-        $user->pass = $req->input('pass');
+        $user->password = $req->input('password');
         $user->passport = $req->input('passport');
 
         $user->save();
         return redirect()->route('login')->with('success', 'Регистрация успешна');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

@@ -27,8 +27,8 @@
                         <input placeholder="____.______" name="passport">
                     </div>
                     <div class="col-6 py-2">
-                        <label for="pass">Пароль</label>
-                        <input type="password" name="pass">
+                        <label for="password">Пароль</label>
+                        <input type="password" name="password">
                     </div>
 
                     <div  class="col-12">
