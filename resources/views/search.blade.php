@@ -50,11 +50,12 @@
                 <div class="mt-5">
                     <div class="text-center mb-1">Дата:</div>
                     <div class="font-bold fs-4 mb-3">{{ $route->date }}</div>
-                    <a href="{{ route("booking") }}">
-                        <button class="action-btn-look fw-500 mt-3 btn-booked-buy text-white btn w-100">
+                    <form action="{{ route('book.route', $route->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="action-btn-look fw-500 mt-3 btn-booked-buy text-white btn w-100">
                             Забронировать
                         </button>
-                    </a>
+                    </form>
                 </div>
             </div>
         </div>

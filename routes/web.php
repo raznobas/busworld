@@ -25,6 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/booking', function () {
         return view('booking');
     })->name('booking');
+
+    Route::post('/book-route/{route}',
+        [\App\Http\Controllers\UserController::class, 'bookRoute']
+    )->name('book.route');
+
     Route::get('/profile',
         [\App\Http\Controllers\UserController::class, 'showProfile']
     )->name('profile');

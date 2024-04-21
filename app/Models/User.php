@@ -18,14 +18,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'surname',
-        'login',
-        'password',
-        'passport',
-        'route_id',
-    ];
+    public function routes()
+    {
+        return $this->belongsToMany(Route::class, 'user_routes');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
