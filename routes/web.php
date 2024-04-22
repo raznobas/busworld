@@ -21,6 +21,13 @@ Route::get('/search',
     [\App\Http\Controllers\RouteController::class, 'index']
 )->name('search');
 
+Route::get('/reset-search',
+    [\App\Http\Controllers\RouteController::class, 'resetSearch']
+)->name('reset-search');
+
+Route::post('/search',
+    [\App\Http\Controllers\RouteController::class, 'index']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/booking', function () {
         return view('booking');
@@ -29,6 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/book-route/{route}',
         [\App\Http\Controllers\UserController::class, 'bookRoute']
     )->name('book.route');
+
+    Route::post('/booking-delete/{id}',
+        [\App\Http\Controllers\UserController::class, 'bookingDelete']
+    )->name('booking-delete');
 
     Route::get('/profile',
         [\App\Http\Controllers\UserController::class, 'showProfile']

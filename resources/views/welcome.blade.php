@@ -11,31 +11,10 @@
     <div class="container mt-6">
         <div class="row justify-content-center">
             <div class="col-6 block-search bg-block">
-                <h2 class="fw-bold text-center">Найди свой рейс</h2>
-                <div class="row mt-5">
-                    <div class="col">
-                        <label for="from">Откуда</label>
-                        <input id="from">
-                    </div>
-                    <div class="col">
-                        <label for="where">Куда</label>
-                        <input id="where">
-                    </div>
-                    <div class="col-3">
-                        <label for="people">Пассажиры</label>
-                        <input type="number" id="people">
-                    </div>
-                </div>
+                <h2 class="fw-bold text-center">Найди свой рейс прямо сейчас и забудь о бесконечных
+                    надоедливых способах найти именно то, что тебе нужно</h2>
                 <div class="row align-items-end mt-3">
-                    <div class="col">
-                        <label for="to">Туда</label>
-                        <input type="date" id="to">
-                    </div>
-                    <div class="col">
-                        <label for="rev">Обратно</label>
-                        <input type="date" id="rev">
-                    </div>
-                    <div class="col-3">
+                    <div class="col-12">
                         <a href="{{ route('search') }}">
                             <button class="btn w-100 bg-blue btn-search text-white">Искать</button>
                         </a>

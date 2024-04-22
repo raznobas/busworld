@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Route;
+use App\Models\UserRoute;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -24,10 +25,20 @@ class UserController extends Controller
 
         return redirect()->route('profile')->with('success', 'Вы успешно забронировали рейс.');
     }
+
+    public function bookingDelete(Request $request, $routeId) {
+        $user = $request->user();
+        $route = Route::findOrFail($routeId);
+
+        if ($route->users->contains($user->id)) {
+            // Удаляем связь между пользователем и маршрутом
+            $route->users()->detach($user->id);
+            return redirect()->route('profile')->with('success', 'Бронь удалена');
+        }
+        return redirect()->route('profile')->with('error', 'Вы не можете удалить эту бронь');
+    }
     public function showProfile(Request $request)
     {
-//        $user = Auth::user();
-
         $user = $request->user();
         $routesByUser = $user->routes;
 

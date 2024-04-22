@@ -35,12 +35,20 @@
         </div>
         <h2 class="mt-6">Предстоящие бронирования</h2>
         <div class="mt-5 py-4">
-            @if($routesByUser)
+            @if(isset($routesByUser) && count($routesByUser) > 0)
                 @foreach($routesByUser as $booking)
                 <div class="row justify-content-center my-4">
                     <div class="col-8 bg-block py-4 px-4">
-                        <div class="row pb-3 align-items-center">
+                        <div class="row pb-3 align-items-center justify-content-between">
                             <div class="col-1 w-auto fs-4 text-gray">#RT{{ $booking->id }}</div>
+                            <div class="col-4 w-auto ml-auto text-end fs-4">
+                                <form method="POST" action="{{ route('booking-delete', $booking->id) }}">
+                                    @csrf
+                                    <button class="profile-exit-btn fw-500 btn-booked-buy text-white btn w-100">
+                                        Удалить бронь
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                         <div class="fs-5 fw-bold">{{ $booking->start_city }} — {{ $booking->end_city }}</div>
                         <div class="row">
@@ -68,7 +76,7 @@
                 </div>
                 @endforeach
             @else
-            <div>Нет ничего(</div>
+                <div class="fs-3 fw-bold mt-5 text-center">Вы ничего не бронировали. Это плохо(</div>
             @endif
         </div>
     </div>
