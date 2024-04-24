@@ -12,11 +12,11 @@
             <div class="row pt-2 justify-content-center">
                 <div class="col-12 py-2">
                     <label for="login">Логин</label>
-                    <input type="text" name="login">
+                    <input required type="text" name="login">
                 </div>
                 <div class="col-12 py-2">
                     <label for="pass">Пароль</label>
-                    <input type="password" name="password">
+                    <input required type="password" name="password">
                 </div>
                 <div class="col-12">
                     <button type="submit" class="action-btn-look fw-500 btn-booked-buy mt-4 text-white w-100 btn">Войти</button>

@@ -29,20 +29,17 @@
                             <div class="col">
                                 <div class="row pt-2 justify-content-between">
                                     <div class="col-3 w-auto">
-                                        <div class="fs-3 fw-bold">{{ $route->start_time }}</div>
+                                        <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($route->start_time)->format('H:i') }}</div>
                                     </div>
                                     <div class="col-6 w-auto"><img src="../img/line-way.png" alt=""></div>
                                     <div class="col-3 w-auto text-end">
-                                        <div class="fs-3 fw-bold">{{ $route->end_time }}</div>
+                                        <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($route->end_time)->format('H:i') }}</div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-between">
                                     <div class="col-3 text-gray w-auto">
                                         <div class="fs-6">{{ $route->start_place }}</div>
                                     </div>
-                                    {{--                            <div class="col-3 text-gray text-center">--}}
-                                    {{--                                <div class="fs-6">В пути: 4 ч 15 мин</div>--}}
-                                    {{--                            </div>--}}
                                     <div class="col-3 text-gray w-auto text-end">
                                         <div class="fs-6">{{ $route->end_place }}</div>
                                     </div>
@@ -52,15 +49,17 @@
                     </div>
                     <div class="col-1 p-0 line-vertical bg-white"></div>
                     <div class="col-1 w-auto text-center row align-items-end">
-                        <div class="mt-5">
+                        <div>
                             <div class="text-center mb-1">Дата:</div>
-                            <div class="font-bold fs-4 mb-3">{{ $route->date }}</div>
+                            <div class="font-bold fs-4 mb-3">{{ \Carbon\Carbon::parse($route->date)->format('d.m.Y') }}</div>
+                            @if($user->login !== "admin")
                             <form action="{{ route('book.route', $route->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="action-btn-look fw-500 mt-3 btn-booked-buy text-white btn w-100">
                                     Забронировать
                                 </button>
                             </form>
+                            @endif
                         </div>
                     </div>
                 </div>

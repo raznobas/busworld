@@ -12,15 +12,15 @@
                 <div class="row pt-2 justify-content-between">
                     <div class="col-6 py-2">
                         <label for="surname">Фамилия</label>
-                        <input placeholder="Иванов" name="surname">
+                        <input required placeholder="Иванов" name="surname">
                     </div>
                     <div class="col-6 py-2">
                         <label for="name">Имя</label>
-                        <input placeholder="Иван" name="name">
+                        <input required placeholder="Иван" name="name">
                     </div>
                     <div class="col-6 py-2">
                         <label for="login">Логин</label>
-                        <input type="text" name="login">
+                        <input required type="text" name="login">
                     </div>
                     <div class="col-6 py-2">
                         <label for="passport">Серия и номер паспорта</label>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-6 py-2">
                         <label for="password">Пароль</label>
-                        <input type="password" name="password">
+                        <input required type="password" name="password">
                     </div>
 
                     <div  class="col-12">

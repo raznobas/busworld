@@ -33,9 +33,17 @@ Route::middleware('auth')->group(function () {
         return view('booking');
     })->name('booking');
 
+    Route::post('/create-route',
+        [\App\Http\Controllers\RouteController::class, 'createRoute']
+    )->name('create-route');
+
     Route::post('/book-route/{route}',
         [\App\Http\Controllers\UserController::class, 'bookRoute']
     )->name('book.route');
+
+    Route::post('/delete-route/{route}',
+        [\App\Http\Controllers\UserController::class, 'deleteRoute']
+    )->name('delete-route');
 
     Route::post('/booking-delete/{id}',
         [\App\Http\Controllers\UserController::class, 'bookingDelete']
