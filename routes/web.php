@@ -61,13 +61,6 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
 Route::post(
     '/register',
     [\App\Http\Controllers\UserController::class, 'register']
@@ -80,25 +73,5 @@ Route::post('/login',
 Route::post('/logout',
     [\App\Http\Controllers\UserController::class, 'logout']
 )->name('logout');
-
-Route::post(
-    '/contact/submit',
-    [\App\Http\Controllers\ContactController::class, 'submit']
-)->name('contact-form');
-
-Route::get('/data', function () {
-    return view('data');
-})->name('data');
-
-Route::get(
-    'data/{id}',
-    [\App\Http\Controllers\ContactController::class, 'show']
-)->name('data-one');
-
-Route::get(
-    'data/{id}/delete',
-    [\App\Http\Controllers\ContactController::class, 'delete']
-)->name('data-one-delete');
-
 
 
