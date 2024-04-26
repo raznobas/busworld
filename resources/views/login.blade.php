@@ -7,7 +7,7 @@
         </div>
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <div class="bg-block w-25 mx-auto p-5 pb-4 mt-5">
+        <div class="bg-block w-25 mx-auto p-5 pb-4 mt-5 login-mob">
             <h2>Вход</h2>
             <div class="row pt-2 justify-content-center">
                 <div class="col-12 py-2">

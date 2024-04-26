@@ -27,55 +27,16 @@
         <img class="w-100" src="img/gallery.png" alt="">
     </div>
     <div class="container mt-6">
-        <div id="action" class="row justify-content-between">
-            <div class="col-5 w-auto"><h2 class="fw-bold">Лучшие акции недели</h2></div>
-        </div>
-        <div class="row mt-4">
-            <div class="col px-0 mx-2 action-block position-relative bg-block">
-                <div class="action-text px-4 pt-4">
-                    <div class="fs-6 fw-light">Бессрочная</div>
-                    <div class="fw-bold mt-1">ОАЭ: отель Atlantis The Palm 5* со скидкой 10000₽</div>
-                </div>
-                <img class="action-img mt-3" src="img/Rectangle%2039.png" alt="">
-                <div class="action-text-hidden fw-bold position-absolute pt-4 px-4">На сероводородном курорте можно
-                    подлатать своё офисное тело и провести время в окружении таких же молодых и здоровых, как вы.
-                </div>
-                <button class="btn fs-6 action-btn-look text-white position-absolute">Смотреть</button>
-            </div>
-            <div class="col px-0 mx-2 action-block position-relative bg-block">
-                <div class="action-text px-4 pt-4">
-                    <div class="fs-6 fw-light">21.06 - 31.10</div>
-                    <div class="fw-bold mt-1">Катар: Hilton Salwa Beach Resort & Villa 5* — скидки и бонусы</div>
-                </div>
-                <img class="action-img mt-3" src="img/Rectangle%2039-1.png" alt="">
-                <div class="action-text-hidden fw-bold position-absolute pt-4 px-4">В программе — водные процедуры, прогулки
-                    по саду и визит на дачу Сталина.
-                </div>
-                <button class="btn fs-6 action-btn-look text-white position-absolute">Смотреть</button>
-            </div>
-            <div class="col px-0 mx-2 action-block position-relative bg-block">
-                <div class="action-text px-4 pt-4">
-                    <div class="fs-6 fw-light">15.04 - 23.10</div>
-                    <div class="fw-bold mt-1">Мальдивы: Finolhu Maldives 5* Deluxe — скидки до 20%</div>
-                </div>
-                <img class="action-img mt-3" src="img/Rectangle%2039-2.png" alt="">
-                <div class="action-text-hidden fw-bold position-absolute pt-4 px-4">По маршруту вас будет сопровождать
-                    профессиональный гид. Посадка на экскурсию осуществляется с вашего отеля
-                    или ближайшей автобусной остановки.
-                </div>
-                <button class="btn fs-6 action-btn-look text-white position-absolute">Смотреть</button>
-            </div>
-        </div>
-        <div class="row mt-6 bg-block mailing-wrapper justify-content-around align-items-end align-content-end">
-            <div class="col-5 py-5 ">
+        <div class="row mt-6 bg-block justify-content-around align-items-end align-content-end">
+            <div class="col-lg-5 col-sm-12 py-5">
                 <h2 class="text-start">Хочешь путешествовать?</h2>
                 <div class="my-3">Путешествуй!</div>
                 <a href="{{ route('search') }}">
                     <button class="btn w-100 bg-blue btn-search text-white">Путешествовать</button>
                 </a>
             </div>
-            <div class="col-5">
-                <img class="mailing-img" src="img/action-girl.png" alt="">
+            <div class="col col-lg-5">
+                <img class="mailing-img img-fluid w-50" src="img/action-girl.png" alt="">
             </div>
         </div>
         <h2 class="mt-6 text-center">Почему нам стоит доверять?</h2>

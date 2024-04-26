@@ -53,7 +53,9 @@
                                                 <div class="col-3 w-auto">
                                                     <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($booking->start_time)->format('H:i') }}</div>
                                                 </div>
-                                                <div class="col-6 w-auto"><img src="../img/line-way.png" alt=""></div>
+                                                <div class="col">
+                                                    <div class="way-line"></div>
+                                                </div>
                                                 <div class="col-3 w-auto text-end">
                                                     <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($booking->end_time)->format('H:i') }}</div>
                                                 </div>

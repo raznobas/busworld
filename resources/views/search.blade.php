@@ -8,10 +8,10 @@
     <div class="description-nav fs-6 mt-2">Главная > Поиск рейса</div>
     <form class="row input-search-wrapper justify-content-center mt-4">
         @csrf
-        <input class="col-2" name="start_city" placeholder="Москва" type="text">
-        <input class="col-2" name="end_city" placeholder="Ростов-на-Дону" type="text">
-        <input class="col-2" name="date" type="date">
-        <button type="submit" class="col-1 btn btn-mailing btn-search-page text-white">Найти</button>
+        <input class="col-lg-2 col" name="start_city" placeholder="Москва" type="text">
+        <input class="col-lg-2 col" name="end_city" placeholder="Ростов-на-Дону" type="text">
+        <input class="col-lg-2 col" name="date" type="date">
+        <button type="submit" class="col-lg-1 col btn btn-mailing btn-search-page text-white">Найти</button>
     </form>
     <a href="{{ route('reset-search') }}" class="w-full d-block text-center mt-2">
     <div class="btn btn-danger text-white mx-auto">Сбросить поиск</div>
@@ -31,7 +31,9 @@
                                     <div class="col-3 w-auto">
                                         <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($route->start_time)->format('H:i') }}</div>
                                     </div>
-                                    <div class="col-6 w-auto"><img src="../img/line-way.png" alt=""></div>
+                                    <div class="col">
+                                        <div class="way-line"></div>
+                                    </div>
                                     <div class="col-3 w-auto text-end">
                                         <div class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($route->end_time)->format('H:i') }}</div>
                                     </div>
