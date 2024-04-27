@@ -54,7 +54,7 @@
                         <div>
                             <div class="text-center mb-1">Дата:</div>
                             <div class="font-bold fs-4 mb-3">{{ \Carbon\Carbon::parse($route->date)->format('d.m.Y') }}</div>
-                            @if($user->login !== "admin")
+                            @if(isset($user->login) && $user->login !== "admin")
                             <form action="{{ route('book.route', $route->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="action-btn-look fw-500 mt-3 btn-booked-buy text-white btn w-100">
