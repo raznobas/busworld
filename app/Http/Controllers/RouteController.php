@@ -30,6 +30,7 @@ class RouteController extends Controller
     }
     public function createRoute(Request $request) {
         $route = new Route();
+
         $route->start_city = $request->input('start_city');
         $route->start_place = $request->input('start_place');
         $route->start_time = $request->input('start_time');
@@ -37,9 +38,24 @@ class RouteController extends Controller
         $route->end_place = $request->input('end_place');
         $route->end_time = $request->input('end_time');
         $route->date = $request->input('date');
+
         $route->save();
 
         return redirect()->back()->with('success', 'Маршрут добавлен');
     }
 
+    public function editRoute(Request $request, $routeId) {
+        $route = Route::find($routeId);
+
+        $route->start_city = $request->input('start_city');
+        $route->start_place = $request->input('start_place');
+        $route->start_time = $request->input('start_time');
+        $route->end_city = $request->input('end_city');
+        $route->end_place = $request->input('end_place');
+        $route->end_time = $request->input('end_time');
+        $route->date = $request->input('date');
+
+        $route->save();
+        return redirect()->back()->with('success', 'Маршрут обновлен');
+    }
 }

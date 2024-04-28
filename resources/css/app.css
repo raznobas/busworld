@@ -71,6 +71,9 @@ input {
     border: 0;
     width: 100%;
 }
+.edit-input {
+    padding: 5px!important;
+}
 
 .bg-blue {
     background-color: #147EAB;
