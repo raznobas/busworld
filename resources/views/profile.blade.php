@@ -35,11 +35,11 @@
                 </div>
             </div>
         </div>
-        @if($user->login !== "admin")
+        @if($user->login !== "admin") <!-- Если логин пользователя не "admin", выдаем блок с предстоящими бронированиями -->
             <h2 class="mt-6">Предстоящие бронирования</h2>
             <div class="mt-5 py-4">
-                @if(isset($routesByUser) && count($routesByUser) > 0)
-                    @foreach($routesByUser as $booking)
+                @if(isset($routesByUser) && count($routesByUser) > 0) <!-- проверяем, что массив существует и больше нуля -->
+                    @foreach($routesByUser as $booking) <!-- цикл перебора всех записей забронированных маршрутов -->
                         <div class="bg-block mt-5 py-4">
                             <div class="row justify-content-evenly">
                                 <div class="col-9 px-4">
@@ -53,7 +53,7 @@
                                             <div class="row pt-2 justify-content-between">
                                                 <div class="col-3 w-auto">
                                                     <div
-                                                        class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($booking->start_time)->format('H:i') }}</div>
+                                                        class="fs-3 fw-bold">{{ \Carbon\Carbon::parse($booking->start_time)->format('H:i') }}</div> <!-- Формат времени -->
                                                 </div>
                                                 <div class="col">
                                                     <div class="way-line"></div>
@@ -79,7 +79,7 @@
                                     <div>
                                         <div class="text-center mb-1">Дата:</div>
                                         <div
-                                            class="font-bold fs-4 mb-3">{{ \Carbon\Carbon::parse($booking->date)->format('d.m.Y') }}</div>
+                                            class="font-bold fs-4 mb-3">{{ \Carbon\Carbon::parse($booking->date)->format('d.m.Y') }}</div> <!-- Формат даты -->
                                         <div class="mt-2">
                                             <form method="POST" action="{{ route('booking-delete', $booking->id) }}">
                                                 @csrf
@@ -98,7 +98,7 @@
                     <div class="fs-3 fw-bold mt-5 text-center">Вы ничего не бронировали. Это плохо(</div>
                 @endif
             </div>
-        @else
+        @else <!-- Блок для пользователя с логином "admin"-->
             <h2 class="mt-6">Добавление нового маршрута</h2>
             <form method="POST" action="{{ route("create-route") }}" class="bg-block mt-5 p-5">
                 @csrf
@@ -226,6 +226,7 @@
 @endsection
 
 <script>
+    // Функция для удаления маршрута из БД
     function confirmDelete(routeId) {
         if (confirm("Вы уверены, что хотите удалить маршрут?")) {
             document.getElementById('deleteForm').action = "{{ route('delete-route', ':routeId') }}".replace(':routeId', routeId);

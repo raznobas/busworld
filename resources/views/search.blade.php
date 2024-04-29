@@ -16,8 +16,8 @@
     <a href="{{ route('reset-search') }}" class="w-full d-block text-center mt-2">
     <div class="btn btn-danger text-white mx-auto">Сбросить поиск</div>
     </a>
-    @if(isset($routes) && count($routes) > 0)
-        @foreach($routes as $route)
+    @if(isset($routes) && count($routes) > 0) <!-- проверяем, что массив существует и больше нуля -->
+         @foreach($routes as $route) <!-- цикл перебора всех записей маршрутов -->
             <div class="bg-block mt-5 py-4">
                 <div class="row justify-content-evenly">
                     <div class="col-9 px-4">
