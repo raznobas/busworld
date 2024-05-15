@@ -61,6 +61,10 @@
                                     Забронировать
                                 </button>
                             </form>
+                            @else
+                                <a href="{{ route('login') }}" class="action-btn-look fw-500 mt-3 btn-booked-buy text-white btn w-100">
+                                    Забронировать
+                                </a>
                             @endif
                         </div>
                     </div>

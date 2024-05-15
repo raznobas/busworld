@@ -77,5 +77,3 @@ Route::post('/login',
 Route::post('/logout',
     [\App\Http\Controllers\UserController::class, 'logout']
 )->name('logout');
-
-
